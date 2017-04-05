@@ -16,11 +16,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         NDKUtils ndk = new NDKUtils();
 
-//        TextView txt = (TextView)findViewById(R.id.txt);
-//        txt.setText(ndk.invokeCmethod());
-
         Bitmap bitmap = ((BitmapDrawable) getResources().getDrawable(
-                R.mipmap.ic_launcher)).getBitmap();
+                R.mipmap.pic_test)).getBitmap();
         int w = bitmap.getWidth(), h = bitmap.getHeight();
         int[] pix = new int[w * h];
         bitmap.getPixels(pix, 0, w, 0, 0, w, h);
@@ -28,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         Bitmap result = Bitmap.createBitmap(w,h, Bitmap.Config.RGB_565);
         result.setPixels(resultPixes, 0, w, 0, 0,w, h);
 
-        ImageView img = (ImageView)findViewById(R.id.img);
+        ImageView img = (ImageView)findViewById(R.id.img2);
         img.setImageBitmap(result);
 
     }
