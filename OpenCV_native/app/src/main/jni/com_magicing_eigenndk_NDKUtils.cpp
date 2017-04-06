@@ -13,37 +13,6 @@ extern "C"
   JNIEXPORT jintArray JNICALL Java_com_magicing_eigenndk_NDKUtils_gray(
           JNIEnv *env, jclass obj, jintArray buf, int w, int h) {
 
-
-           std::vector<cv::Point2d> src_pts(4);
-              std::vector<cv::Point2d> dst_pts(4);
-
-              src_pts[0].x = 1;
-              src_pts[0].y = 1;
-
-              src_pts[1].x = 1;
-              src_pts[1].y = 1;
-
-              src_pts[2].x = 1;
-              src_pts[2].y = 1;
-
-              src_pts[3].x =1;
-              src_pts[3].y = 1;
-
-              dst_pts[0].x = 1;
-              dst_pts[0].y = 1;
-
-              dst_pts[1].x = 1;
-              dst_pts[1].y = 1;
-
-              dst_pts[2].x = 1;
-              dst_pts[2].y = 1;
-
-              dst_pts[3].x = 1;
-              dst_pts[3].y = 1;
-
-              cv::Mat homo = cv::findHomography(src_pts,dst_pts);
-
-
       jint *cbuf;
       cbuf = env->GetIntArrayElements(buf, JNI_FALSE );
       if (cbuf == NULL) {
